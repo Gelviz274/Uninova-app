@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Utils/constants.dart';
-import 'auth/login_screen.dart';  // Asegúrate de tener este archivo
+import 'auth/login_screen.dart'; // Asegúrate de tener este archivo
+import 'home/user_screen.dart'; // Importa la nueva pantalla
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +16,36 @@ class MyApp extends StatelessWidget {
       title: 'Login Page',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFF2FA98C), // Color de fondo
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: kPrimaryColor,
-        fontFamily: 'Fredoka'), // Colores de texto
+        scaffoldBackgroundColor: const Color(0xFF2FA98C), // Color de fondo
+        textTheme: Theme.of(context).textTheme.apply(
+            bodyColor: kPrimaryColor,
+            fontFamily: 'Fredoka'), // Colores de texto
         useMaterial3: true,
       ),
-      home: const LoginScreen(), // Asegúrate de definir una pantalla inicial
+      home: const LoginScreen(), // Pantalla inicial
     );
   }
 }
 
+// Crear una nueva pantalla después del inicio de sesión
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => UserView()),
+            );
+          },
+          child: const Text('Ver Usuario Aleatorio'),
+        ),
+      ),
+    );
+  }
+}
