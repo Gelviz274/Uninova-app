@@ -12,8 +12,10 @@ class TopText extends StatelessWidget{
     return Text(
       screen == Screens.createAccount ? '¡Crea tu Cuenta!' : '¡Bienvenido\nde\nnuevo!',
       style: const TextStyle(
-        fontSize: 40,
-        fontWeight: FontWeight.w600,
+        fontSize: 50,
+        color: Color(0xFF000000),
+        fontWeight: FontWeight.w900,
+
       ),
     );
   }

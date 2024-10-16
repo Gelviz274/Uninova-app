@@ -11,7 +11,7 @@ class CenterWidgetPainter extends CustomPainter{
         ..style = PaintingStyle.stroke
         ..strokeWidth = 10
         ..imageFilter = ImageFilter.blur(sigmaX: 10, sigmaY: 10)
-        ..color = const Color(0xff3c7b67); // Color teal en formato hexadecimal
+        ..color = const Color(0xff); // Color teal en formato hexadecimal
 
 
     canvas.drawPath( path, paint);

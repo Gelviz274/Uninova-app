@@ -77,8 +77,8 @@ class centerWidget extends StatelessWidget {
                   begin: Alignment(1, -0.6),
                   end: Alignment(-1, 0.8),
                   colors: [
-                    Color(0x80639483),
-                    Color(0x4D639483)
+                    Color(0x80F5F5DC),
+                    Color(0x4DD59A6F)
                   ],
                 ),
               ),

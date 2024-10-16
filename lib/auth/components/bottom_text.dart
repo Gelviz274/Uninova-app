@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_app/Utils/constants.dart';
+
 import 'login_content.dart';
 class BottomText extends StatelessWidget {
   final Screens screen;
@@ -26,7 +26,7 @@ class BottomText extends StatelessWidget {
                   ? '¿Ya tienes una cuenta?'
                   : '¿No tienes una cuenta?',
                   style: TextStyle(
-                    color: kPrimaryColor,
+                    color: Colors.black,
                     fontWeight: FontWeight.w600,
                   )
             ),
@@ -35,7 +35,7 @@ class BottomText extends StatelessWidget {
                   ? '  Iniciar Sesión'
                   : '  Registrase',
               style: const TextStyle(
-                color: kSecondaryColor,
+                color: Colors.black,
                 fontWeight: FontWeight.bold
               )
             )

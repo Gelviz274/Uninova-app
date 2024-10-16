@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import '../Utils/api_service.dart';
 import 'user.dart';
 
-class UserView extends StatefulWidget {
-  @override
-  _UserViewState createState() => _UserViewState();
-}
+
 
 class _UserViewState extends State<UserView> {
   late Future<User?> user;
@@ -20,7 +17,7 @@ class _UserViewState extends State<UserView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Random User')),
+      appBar: AppBar(title: Text('Usuarios aleatorios')),
       body: Center(
         child: FutureBuilder<User?>(
           future: user,
@@ -34,27 +31,50 @@ class _UserViewState extends State<UserView> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(userData.picture),
+                  Container(
+                    width: 250.0, // Ajusta el ancho deseado
+                    height: 250.0, // Ajusta el alto deseado
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0), // Bordes redondeados
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26, // Color de la sombra
+                          blurRadius: 6.0, // Difuminado de la sombra
+                          offset: Offset(0, 3), // Desplazamiento de la sombra
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0), // Bordes redondeados
+                      child: Image.network(
+                        userData.picture,
+                        fit: BoxFit.cover, // Ajusta la imagen al tamaño del contenedor
+                      ),
+                    ),
+                  ),
                   Text(userData.name,
                       style: TextStyle(
-                        fontSize: 24,
-                        color: Colors.white,
+                        fontSize: 30,
+                        color: Colors.brown,
                         fontWeight: FontWeight.bold,
                       )),
                   Text(userData.email,
                       style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       )),
                   Text(userData.phone,
                       style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       )),
                   Text(userData.country,
                       style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown,
                       )),
                 ],
               );
@@ -66,4 +86,8 @@ class _UserViewState extends State<UserView> {
       ),
     );
   }
+}
+class UserView extends StatefulWidget {
+  @override
+  _UserViewState createState() => _UserViewState();
 }

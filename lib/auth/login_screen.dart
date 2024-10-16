@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             gradient: const LinearGradient(
                 begin: Alignment(-0.2, -0.8),
                 end: Alignment.bottomCenter,
-                colors: [Color(0xFF333333), Color(0xFF03624C)])),
+                colors: [Color(0xFF674F2D), Color(0xFFE4D5B4)])),
       ),
     );
   }
@@ -39,8 +39,8 @@ class _LoginScreenState extends State<LoginScreen> {
             begin: Alignment(0.6, -1.1),
             end: Alignment(0.7, 0.8),
             colors: [
-              Color(0xFF03624C),
-              Color(0xFF333333),
+              Color(0xFFE4D5B4),
+              Color(0xFF674F2D),
             ]),
       ),
     );

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Login Page',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF2FA98C), // Color de fondo
+        scaffoldBackgroundColor: Colors.white, // Color de fondo
         textTheme: Theme.of(context).textTheme.apply(
             bodyColor: kPrimaryColor,
             fontFamily: 'Fredoka'), // Colores de texto
