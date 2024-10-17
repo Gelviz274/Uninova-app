@@ -21,7 +21,7 @@ class LoginContent extends StatelessWidget {
       child: Material(
         elevation: 8,
         shadowColor: Colors.black45,
-        color: Colors.transparent,
+        color: Colors.yellowAccent,
         borderRadius: BorderRadius.circular(30),
         child: TextField(
           textAlignVertical: TextAlignVertical.bottom,
@@ -45,7 +45,8 @@ class LoginContent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 135, vertical: 16),
       child: ElevatedButton(
-        onPressed: () {print('registrando..');
+        onPressed: () {
+          print('registrando..');
         },
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 14),

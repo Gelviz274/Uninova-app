@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_app/Utils/constants.dart';
 import '../Utils/api_service.dart';
 import 'user.dart';
 
-class UserView extends StatefulWidget {
-  final String username; // Propiedad final
 
-  // Constructor que acepta un nombre de usuario y un key opcional
-  const UserView({Key? key, required this.username}) : super(key: key);
-
-  @override
-  _UserViewState createState() => _UserViewState();
-}
 
 class _UserViewState extends State<UserView> {
   late Future<User?> user;
+
+  final String username;
+  const UserView({Key? key, required this.username}) : super(key: key);
 
   @override
   void initState() {
@@ -26,17 +20,7 @@ class _UserViewState extends State<UserView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Usuarios',
-          style: TextStyle(
-            color: Colors.white, // Color del texto
-            fontSize: 20, // Tamaño del texto
-            fontWeight: FontWeight.bold, // Peso de la fuente
-          ),
-        ),
-        backgroundColor: kPrimaryColor, // Color café (sienna)
-      ),
+      appBar: AppBar(title: Text('Usuarios ')),
       body: Center(
         child: FutureBuilder<User?>(
           future: user,
@@ -105,4 +89,8 @@ class _UserViewState extends State<UserView> {
       ),
     );
   }
+}
+class UserView extends StatefulWidget {
+  @override
+  _UserViewState createState() => _UserViewState();
 }

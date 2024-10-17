@@ -33,5 +33,7 @@ flutter:
 
   assets:
     - assets/images/logo-facebook.png
+    - assets/images/Logo_uninova.png
     - assets/images/Logo_google.png
+
 

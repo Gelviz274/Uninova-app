@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Utils/constants.dart';
-import 'auth/login_screen.dart'; // Asegúrate de tener este archivo
+import 'screens/log_screen.dart';// Asegúrate de tener este archivo
 import 'home/user_screen.dart'; // Importa la nueva pantalla
 
 void main() {
@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
       title: 'Login Page',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white, // Color de fondo
+        scaffoldBackgroundColor: kBackgroudColor, // Color de fondo
         textTheme: Theme.of(context).textTheme.apply(
             bodyColor: kPrimaryColor,
             fontFamily: 'Fredoka'), // Colores de texto
         useMaterial3: true,
       ),
-      home: const LoginScreen(), // Pantalla inicial
+      home: LoginPage(), // Pantalla inicial
     );
   }
 }
@@ -38,9 +38,14 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
+            // Aquí debes obtener el valor del username que quieres pasar
+            String username = "ejemploUsername"; // Cambia esto por el valor real que necesitas
+
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => UserView()),
+              MaterialPageRoute(
+                builder: (context) => UserView(username: username), // Proporciona el username
+              ),
             );
           },
           child: const Text('Ver Usuario Aleatorio'),
@@ -48,4 +53,5 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
 }
